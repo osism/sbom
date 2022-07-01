@@ -22,6 +22,7 @@ versions:
   horizon: 20.1.2.20220630
   influxdb: 1.8.10.20220630
   ironic: 18.2.1.20220630
+  ironic_inspector: 10.8.1.dev3.20220630
   iscsid: 2.0.874.20220630
   kafka: 2.0.1.20220630
   keepalived: 2.0.19.20220630
