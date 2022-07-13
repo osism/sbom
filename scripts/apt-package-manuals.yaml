@@ -1,0 +1,347 @@
+---
+j2:
+  - file: ansible-collection-commons/molecule/default/Dockerfile.j2
+    packages:
+      - aptitude
+      - bash
+      - ca-certificates
+      - iproute2
+      - python3
+      - python3-apt
+      - rsync
+      - sudo
+      - systemd
+      - systemd-sysv
+  - file: ansible-collection-services/molecule/default/Dockerfile.j2
+    packages:
+      - aptitude
+      - bash
+      - ca-certificates
+      - iproute2
+      - python3
+      - python3-apt
+      - rsync
+      - sudo
+      - systemd
+      - systemd-sysv
+  - file: ansible-collection-validations/molecule/default/Dockerfile.j2
+    packages:
+      - aptitude
+      - bash
+      - ca-certificates
+      - iproute2
+      - python3
+      - python3-apt
+      - rsync
+      - sudo
+      - systemd
+      - systemd-sysv
+  - file: ansible-collection-services/roles/auditd/templates/rules/20-neo23x0.rules.j2
+    packages:
+      - software_mgmt
+  - file: ansible-collection-services/roles/lldpd/templates/rules/20-neo23x0.rules.j2
+    packages:
+      - software_mgmt
+  - file: ansible-collection-services/roles/manager/templates/wrapper/osism-update-manager.j2
+    packages:
+      - virtualenv
+Containerfile:
+  - file: openstack-configuration-reference/Containerfile
+    packages:
+      - apt-transport-https
+      - python3-pip
+      - software-properties-common
+      - python3-barbican
+      - python3-ceilometer
+      - python3-cinder
+      - python3-glance
+      - python3-keystone
+      - python3-neutron
+  - file: container-image-kolla-ansible/Containerfile
+    packages:
+      - build-essential
+      - dumb-init
+      - git
+      - gnupg-agent
+      - jq
+      - libffi-dev
+      - libssh-dev
+      - libssl-dev
+      - libyaml-dev
+      - openssh-client
+      - patch
+      - python3-dev
+      - python3-pip
+      - python3-setuptools
+      - python3-wheel
+      - rsync
+      - sshpass
+      - vim-tiny
+  - file: container-images/ara-server/Containerfile
+    packages:
+      - build-essential
+      - gcc
+      - git
+      - libffi-dev
+      - libmariadb-dev
+      - libssl-dev
+      - libyaml-dev
+      - curl
+      - libmariadb3
+  - file: container-images/github-actions-runner/Containerfile
+    packages:
+      - ca-certificates
+      - curl
+      - gcc
+      - git
+      - gnupg-agent
+      - gosu
+      - jq
+      - libc6-dev
+      - libc++-dev
+      - libffi-dev
+      - libssl-dev
+      - libyaml-dev
+      - lsb-release
+      - make
+      - openssh-client
+      - patch
+      - python3-dev
+      - python3-pip
+      - python3-pip
+      - python3-setuptools
+      - python3-wheel
+      - rsync
+      - software-properties-common
+      - sudo
+      - tini
+      - uidmap
+      - wget
+      - buildah
+      - fuse-overlayfs
+      - podman
+  - file: container-images/patchman/Containerfile
+    packages:
+      - curl
+      - python3-apt
+      - python3-dev
+      - libmagic1
+  - file: container-images/tang/Containerfile
+    packages:
+      - tang
+      - xinetd
+  - file: container-images/virtualbmc/Containerfile
+    packages:
+      - python3-dev
+      - libvirt-dev
+      - pkg-config
+      - gcc
+  - file: container-images/cephclient/Containerfile
+    packages:
+      - apt-transport-https
+      - bash-completion
+      - dumb-init
+      - gpg-agent
+      - software-properties-common
+      - wget
+      - ceph
+      - fio
+  - file: container-images/prometheus-redfish-exporter/Containerfile
+    packages:
+      - git
+      - make
+  - file: container-image-osism-ansible/Containerfile
+    packages:
+      - build-essential
+      - dumb-init
+      - git
+      - git-lfs
+      - gnupg-agent
+      - iputils-ping
+      - jq
+      - libffi-dev
+      - libssh-dev
+      - libssl-dev
+      - libyaml-dev
+      - openssh-client
+      - procps
+      - rsync
+      - sshpass
+      - vim-tiny
+  - file: openstack-configuration-validator/Containerfile
+    packages:
+      - apt-transport-https
+      - python3-pip
+      - software-properties-common
+      - python3-barbican
+      - python3-ceilometer
+      - python3-cinder
+      - python3-glance
+      - python3-keystone
+      - python3-neutron
+  - file: scripts/kolla/generate-images-file/Containerfile
+    packages:
+      - git
+      - python3-dev
+      - python3-pip
+  - file: python-osism/Containerfile
+    packages:
+      - build-essential
+      - gcc
+      - git
+      - openssh-client
+      - procps
+      - git-annex
+  - file: container-image-ceph-ansible/Containerfile
+    packages:
+      - dumb-init
+      - git
+      - jq
+      - libffi-dev
+      - libssh-dev
+      - libssl-dev
+      - libyaml-dev
+      - openssh-client
+      - patch
+      - python3-dev
+      - python3-pip
+      - python3-setuptools
+      - python3-wheel
+      - rsync
+      - sshpass
+      - vim-tiny
+sh:
+  - file: testbed/terraform/files/manager.sh
+    packages:
+      - git-lfs
+      - python3-argcomplete
+      - python3-crypto
+      - python3-dnspython
+      - python3-jmespath
+      - python3-kerberos
+      - python3-libcloud
+      - python3-lockfile
+      - python3-netaddr
+      - python3-netifaces
+      - python3-ntlm-auth
+      - python3-pip
+      - python3-requests-kerberos
+      - python3-requests-ntlm
+      - python3-selinux
+      - python3-winrm
+      - python3-xmltodict
+  - file: testbed/contrib/elasticsearch_random_data_load.sh
+    packages:
+      - python3-tornado
+  - file: testbed/contrib/rally/rally.sh
+    packages:
+      - virtualenv
+  - file: testbed/contrib/check_infrastructure_services.sh
+    packages:
+      - libmonitoring-plugin-perl
+      - libwww-perl
+      - libjson-perl
+      - monitoring-plugins
+      - mysql-client
+  - file: testbed/contrib/mysql_random_data_load.sh
+    packages:
+      - mariadb-client-core-10.1
+  - file: container-image-kolla-ansible/scripts/test.sh
+    packages:
+      - python3
+      - python3-docker
+      - python3-pip
+      - python3-setuptools
+      - python
+      - python-docker
+      - python-pip
+  - file: container-image-osism-ansible/files/scripts/change.sh
+    packages:
+      - git
+  - file: openstack-ironic-images/scripts/ubuntu/provision.sh
+    packages:
+      - cloud-guest-utils
+      - cloud-init
+      - cloud-initramfs-copymods
+      - cloud-initramfs-dyn-netconf
+      - git
+      - gnupg
+      - python3-netaddr
+      - python3-pip
+      - vim
+  - file: cloud-in-a-box/bootstrap.sh
+    packages:
+      - python3-virtualenv
+      - sshpass
+  - file: python-osism/files/change.sh
+    packages:
+      - git
+  - file: container-image-ceph-ansible/scripts/test.sh
+    packages:
+      - python3
+      - python3-docker
+      - python3-pip
+      - python3-setuptools
+mako:
+  - file: container-images-kolla/templates/latest/template-overrides.mako
+    packages:
+      - locales
+      - python3-setuptools
+      - default-jre-headless
+      - libapache2-mod-auth-openidc
+      - libmemcached11
+  - file: container-images-kolla/templates/victoria/template-overrides.mako
+    packages:
+      - locales
+      - python3-setuptools
+      - default-jre-headless
+      - libapache2-mod-auth-openidc
+  - file: container-images-kolla/templates/wallaby/template-overrides.mako
+    packages:
+      - locales
+      - python3-setuptools
+      - libapache2-mod-auth-openidc
+  - file: container-images-kolla/templates/xena/template-overrides.mako
+    packages:
+      - locales
+      - python3-setuptools
+      - default-jre-headless
+      - libapache2-mod-auth-openidc
+      - libmemcached11
+yaml-variables:
+  - file: dummy
+    packages:
+      - amd64-microcode
+      - command-not-found
+      - curl
+      - debconf
+      - debsums
+      - dmidecode
+      - ethtool
+      - htop
+      - iftop
+      - intel-microcode
+      - iotop
+      - iperf
+      - jq
+      - libvirt-bin
+      - ltrace
+      - lxc
+      - lxd
+      - mosh
+      - mtr
+      - multitail
+      - ncdu
+      - netcat
+      - open-iscsi
+      - pciutils
+      - pstack
+      - pv
+      - rsyslog
+      - selinux-utils
+      - socat
+      - ssh
+      - sysstat
+      - tmux
+      - tree
+      - whois

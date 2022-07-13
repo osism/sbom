@@ -1,0 +1,26 @@
+  File \"/usr/local/lib/python3.10/site-packages/pulpcore/tasking/pulpcore_worker.py\", line 445, in _perform_task
+    result = func(*args, **kwargs)
+  File \"/usr/local/lib/python3.10/site-packages/pulp_ansible/app/tasks/roles.py\", line 53, in synchronize
+    return d_version.create()
+  File \"/usr/local/lib/python3.10/site-packages/pulpcore/plugin/stages/declarative_version.py\", line 155, in create
+    with self.repository.new_version() as new_version:
+  File \"/usr/local/lib/python3.10/site-packages/pulpcore/app/models/repository.py\", line 141, in new_version
+    self.invalidate_cache()
+  File \"/usr/local/lib/python3.10/site-packages/django_lifecycle/decorators.py\", line 119, in func
+    hooked_method(*args, **kwargs)
+  File \"/usr/local/lib/python3.10/site-packages/pulpcore/app/models/repository.py\", line 264, in invalidate_cache
+    Cache().delete(base_key=base_paths)
+  File \"/usr/local/lib/python3.10/site-packages/pulpcore/cache/cache.py\", line 41, in wrapper
+    return func(*args, **kwargs)
+  File \"/usr/local/lib/python3.10/site-packages/pulpcore/cache/cache.py\", line 119, in delete
+    return self.redis.delete(*base_key)
+  File \"/usr/local/lib/python3.10/site-packages/redis/commands/core.py\", line 1588, in delete
+    return self.execute_command(\"DEL\", *names)
+  File \"/usr/local/lib/python3.10/site-packages/redis/client.py\", line 1235, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File \"/usr/local/lib/python3.10/site-packages/redis/connection.py\", line 1382, in get_connection
+    connection = self.make_connection()
+  File \"/usr/local/lib/python3.10/site-packages/redis/connection.py\", line 1422, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+  File \"/usr/local/lib/python3.10/site-packages/redis/connection.py\", line 539, in __init__
+    self.port = int(port)

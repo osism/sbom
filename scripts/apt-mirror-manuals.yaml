@@ -1,0 +1,195 @@
+---
+mirrors:
+  - name: de-archive-ubuntu
+    url: http://de.archive.ubuntu.com/ubuntu/
+    distributions:
+      - bionic
+      - bionic-backports
+      - bionic-security
+      - bionic-updates
+      - focal
+      - focal-backports
+      - focal-security
+      - focal-updates
+    components:
+      - main
+      - restricted
+      - universe
+      - multiverse
+  - name: opensuse-kubic
+    url: http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/
+    distributions:
+      - /
+  - name: opensuse-katacontainers
+    url: http://download.opensuse.org/repositories/home:/katacontainers:/releases:/x86_64:/stable-1.11/xUbuntu_18.04/
+    distributions:
+      - /
+  - name: mariadb
+    url: http://downloads.mariadb.com/MariaDB/mariadb-10.3/repo/ubuntu
+    distributions:
+      - focal
+    components:
+      - main
+  - name: treasuredata
+    url: http://packages.treasuredata.com/4/ubuntu/focal/
+    distributions:
+      - focal
+    components:
+      - contrib
+  - name: ports-ubuntu
+    url: http://ports.ubuntu.com/ubuntu-ports/
+    distributions:
+      - bionic
+      - bionic-backports
+      - bionic-security
+      - bionic-updates
+      - focal
+      - focal-backports
+      - focal-security
+      - focal-updates
+    components:
+      - main
+      - restricted
+      - universe
+      - multiverse
+  - name: launchpad-qpid
+    url: http://ppa.launchpad.net/qpid/released/ubuntu/
+    distributions:
+      - focal
+    components:
+      - main
+  - name: launchpad-rabbitmq
+    url: http://ppa.launchpad.net/rabbitmq/rabbitmq-erlang/ubuntu
+    distributions:
+      - focal
+    components:
+      - main
+  - name: betacloud
+    url: http://repository.betacloud.xyz:8080/node-2020-01-31
+    distributions:
+      - bionic
+    compoments:
+      - main
+  - name: ubuntu-cloud-archive-canonical
+    url: http://ubuntu-cloud.archive.canonical.com/ubuntu
+    distributions:
+      - focal-updates/victoria
+      - focal-updates/wallaby
+      - focal-updates/xena
+      - focal-updates/yoga
+    components:
+      - main
+  - name: kubernetes
+    url: https://apt.kubernetes.io/
+    distributions:
+      - kubernetes-xenial
+    components:
+      - main
+  - name: hashicorp
+    url: https://apt.releases.hashicorp.com
+    distributions:
+      - focal
+    components:
+      - main
+  - name: aquasecurity-github
+    url: https://aquasecurity.github.io/trivy-repo/deb
+    distributions:
+      - focal
+    components:
+      - main
+  - name: elastic-6
+    url: https://artifacts.elastic.co/packages/6.x/apt
+    distributions:
+      - stable
+    components:
+      - main
+  - name: elastic-oss-6
+    url: https://artifacts.elastic.co/packages/oss-6.x/apt
+    distributions:
+      - stable
+    components:
+      - main
+  - name: elastic-oss-7
+    url: https://artifacts.elastic.co/packages/oss-7.x/apt
+    distributions:
+      - stable
+    components:
+      - main
+  - name: bintray-falcosecurity
+    url: https://dl.bintray.com/falcosecurity/deb
+    distributions:
+      - stable
+    components:
+      - main
+  - name: bintray-rabbitmq-erlang
+    url: https://dl.bintray.com/rabbitmq-erlang/debian/
+    distributions:
+      - focal
+    components:
+      - erlang
+  - name: bintray-rabbitmq
+    url: https://dl.bintray.com/rabbitmq/debian
+    distributions:
+      - bionic
+    components:
+      - main
+  - name: ceph-octopus
+    url: https://download.ceph.com/debian-octopus
+    distributions:
+      - focal
+    components:
+      - main
+  - name: ceph-pacific
+    url: https://download.ceph.com/debian-pacific
+    distributions:
+      - focal
+    components:
+      - main
+  - name: ceph-quincy
+    url: https://download.ceph.com/debian-quincy
+    distributions:
+      - focal
+    components:
+      - main
+  - name: docker
+    url: https://download.docker.com/linux/ubuntu
+    distributions:
+      - bionic
+      - focal
+      - xenial
+    components:
+      - stable
+  - name: sysdig
+    url: https://download.sysdig.com/stable/deb
+    distributions:
+      - stable-amd64
+  - name: packagecloud-netdata
+    url: https://packagecloud.io/netdata/netdata-edge/ubuntu/
+    distributions:
+      - focal
+    components:
+      - main
+  - name: packagecloud-rabbitmq
+    url: https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu/
+    distributions:
+      - focal
+    components:
+      - main
+  - name: cisofy
+    url: https://packages.cisofy.com/community/lynis/deb/
+    distributions:
+      - stable
+    components:
+      - main
+  - name: grafana
+    url: https://packages.grafana.com/oss/deb
+    distributions:
+      - stable
+    components:
+      - main
+  - name: influxdata
+    url: https://repos.influxdata.com/ubuntu
+    distributions:
+      - focal
+    components:
+      - stable
