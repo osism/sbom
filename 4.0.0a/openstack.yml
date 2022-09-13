@@ -277,141 +277,64 @@ images:
   image: quay.io/osism/cron:3.0pl1.20220912
 
 versions: 
-  aodh-api: 14.0.0.20220912
-  aodh-evaluator: 14.0.0.20220912
-  aodh-expirer: 14.0.0.20220912
-  aodh-listener: 14.0.0.20220912
-  aodh-notifier: 14.0.0.20220912
-  barbican-api: 14.0.0.20220912
-  barbican-keystone-listener: 14.0.0.20220912
-  barbican-worker: 14.0.0.20220912
-  bifrost-deploy: 14.0.0.20220912
-  ceilometer-central: 18.0.0.20220912
-  ceilometer-compute: 18.0.0.20220912
-  ceilometer-ipmi: 18.0.0.20220912
-  ceilometer-notification: 18.0.0.20220912
-  cinder-api: 20.0.1.20220912
-  cinder-backup: 20.0.1.20220912
-  cinder-scheduler: 20.0.1.20220912
-  cinder-volume: 20.0.1.20220912
-  cloudkitty-api: 16.0.0.20220912
-  cloudkitty-processor: 16.0.0.20220912
+  aodh: 14.0.0.20220912
+  barbican: 14.0.0.20220912
+  bifrost: 14.0.0.20220912
+  ceilometer: 18.0.0.20220912
+  cinder: 20.0.1.20220912
+  cloudkitty: 16.0.0.20220912
   collectd: 5.9.2.g.20220912
   cron: 3.0pl1.20220912
-  designate-api: 14.0.1.20220912
-  designate-backend-bind9: 14.0.1.20220912
-  designate-central: 14.0.1.20220912
-  designate-mdns: 14.0.1.20220912
-  designate-producer: 14.0.1.20220912
-  designate-sink: 14.0.1.20220912
-  designate-worker: 14.0.1.20220912
+  designate: 14.0.1.20220912
   dnsmasq: 2.80.20220912
-  elasticsearch-curator: 5.8.4.20220912
   elasticsearch: 7.17.6.20220912
+  elasticsearch_curator: 5.8.4.20220912
   etcd: 3.2.26.20220912
   fluentd: 4.4.1.20220912
-  glance-api: 24.1.0.20220912
-  gnocchi-api: 4.4.2.20220912
-  gnocchi-metricd: 4.4.2.20220912
-  gnocchi-statsd: 4.4.2.20220912
+  glance: 24.1.0.20220912
+  gnocchi: 4.4.2.20220912
   grafana: 9.1.4.20220912
   haproxy: 2.2.25.20220912
-  heat-api-cfn: 18.0.0.20220912
-  heat-api: 18.0.0.20220912
-  heat-engine: 18.0.0.20220912
+  heat: 18.0.0.20220912
   horizon: 22.1.0.20220912
   influxdb: 1.8.10.20220912
-  ironic-api: 20.1.0.20220912
-  ironic-conductor: 20.1.0.20220912
-  ironic-inspector: 10.11.1.dev2.20220912
-  ironic-neutron-agent: 20.2.0.20220912
-  ironic-pxe: 20.1.0.20220912
+  ironic: 20.1.0.20220912
   iscsid: 2.0.874.20220912
   kafka: 2.0.1.20220912
   keepalived: 2.0.19.20220912
-  keystone-fernet: 21.0.0.20220912
-  keystone-ssh: 21.0.0.20220912
   keystone: 21.0.0.20220912
   kibana: 7.10.2.20220912
-  kolla-toolbox: 14.5.0.20220912
-  kuryr-libnetwork: 9.0.1.dev3.20220912
+  kolla_toolbox: 14.5.0.20220912
+  kuryr: 9.0.1.dev3.20220912
   logstash: 7.17.6.20220912
-  magnum-api: 14.0.0.20220912
-  magnum-conductor: 14.0.0.20220912
-  manila-api: 14.0.0.20220912
-  manila-data: 14.0.0.20220912
-  manila-scheduler: 14.0.0.20220912
-  manila-share: 14.0.0.20220912
-  mariadb-clustercheck: 10.6.9.20220912
-  mariadb-server: 10.6.9.20220912
+  magnum: 14.0.0.20220912
+  manila: 14.0.0.20220912
+  mariadb: 10.6.9.20220912
   memcached: 1.5.22.20220912
-  mistral-api: 14.0.0.20220912
-  mistral-engine: 14.0.0.20220912
-  mistral-event-engine: 14.0.0.20220912
-  mistral-executor: 14.0.0.20220912
+  mistral: 14.0.0.20220912
   multipathd: 0.8.3.20220912
-  neutron-bgp-dragent: 20.2.0.20220912
-  neutron-dhcp-agent: 20.2.0.20220912
-  neutron-infoblox-ipam-agent: 20.2.0.20220912
-  neutron-l3-agent: 20.2.0.20220912
-  neutron-linuxbridge-agent: 20.2.0.20220912
-  neutron-metadata-agent: 20.2.0.20220912
-  neutron-metering-agent: 20.2.0.20220912
-  neutron-mlnx-agent: 20.2.0.20220912
-  neutron-openvswitch-agent: 20.2.0.20220912
-  neutron-server: 20.2.0.20220912
-  neutron-sriov-agent: 20.2.0.20220912
-  nova-api: 25.0.1.20220912
-  nova-compute-ironic: 25.0.1.20220912
-  nova-compute: 25.0.1.20220912
-  nova-conductor: 25.0.1.20220912
-  nova-libvirt: 8.0.0.20220912
-  nova-novncproxy: 25.0.1.20220912
-  nova-scheduler: 25.0.1.20220912
-  nova-serialproxy: 25.0.1.20220912
-  nova-spicehtml5proxy: 25.0.1.20220912
-  nova-ssh: 25.0.1.20220912
-  octavia-api: 10.0.0.20220912
-  octavia-driver-agent: 10.0.0.20220912
-  octavia-health-manager: 10.0.0.20220912
-  octavia-housekeeping: 10.0.0.20220912
-  octavia-worker: 10.0.0.20220912
-  openvswitch-db-server: 2.17.2.20220912
-  openvswitch-netcontrold: 2.17.2.20220912
-  openvswitch-vswitchd: 2.17.2.20220912
-  ovn-controller: 22.03.0.20220912
-  ovn-nb-db-server: 22.03.0.20220912
-  ovn-northd: 22.03.0.20220912
-  ovn-sb-db-server: 22.03.0.20220912
-  placement-api: 7.0.0.20220912
-  prometheus-alertmanager: 0.24.0.20220912
-  prometheus-blackbox-exporter: 0.16.0.20220912
-  prometheus-cadvisor: 0.38.7.20220912
-  prometheus-elasticsearch-exporter: 1.2.1.20220912
-  prometheus-haproxy-exporter: 0.10.0.20220912
-  prometheus-libvirt-exporter: 4.0.0a.20220912
-  prometheus-memcached-exporter: 0.6.0.20220912
-  prometheus-mtail: 3.0.0.20220912
-  prometheus-mysqld-exporter: 0.12.1.20220912
-  prometheus-node-exporter: 0.18.1.20220912
-  prometheus-openstack-exporter: 4.0.0a.20220912
-  prometheus-v2-server: 2.26.1.20220912
+  neutron: 20.2.0.20220912
+  nova: 25.0.1.20220912
+  octavia: 10.0.0.20220912
+  openvswitch: 2.17.2.20220912
+  ovn: 22.03.0.20220912
+  placement: 7.0.0.20220912
+  prometheus: 2.26.1.20220912
+  prometheus_alertmanager: 0.24.0.20220912
+  prometheus_blackbox_exporter: 0.16.0.20220912
+  prometheus_cadvisor: 0.38.7.20220912
+  prometheus_elasticsearch_exporter: 1.2.1.20220912
+  prometheus_haproxy_exporter: 0.10.0.20220912
+  prometheus_libvirt_exporter: 4.0.0a.20220912
+  prometheus_memcached_exporter: 0.6.0.20220912
+  prometheus_mtail: 3.0.0.20220912
+  prometheus_mysqld_exporter: 0.12.1.20220912
+  prometheus_node_exporter: 0.18.1.20220912
+  prometheus_openstack_exporter: 4.0.0a.20220912
   rabbitmq: 3.10.7.20220912
-  redis-sentinel: 5.0.7.20220912
   redis: 5.0.7.20220912
-  senlin-api: 13.0.0.20220912
-  senlin-conductor: 13.0.0.20220912
-  senlin-engine: 13.0.0.20220912
-  senlin-health-manager: 13.0.0.20220912
+  senlin: 13.0.0.20220912
   storm: 1.2.2.20220912
-  swift-account: 2.29.1.20220912
-  swift-container: 2.29.1.20220912
-  swift-object-expirer: 2.29.1.20220912
-  swift-object: 2.29.1.20220912
-  swift-proxy-server: 2.29.1.20220912
-  swift-rsyncd: 2.29.1.20220912
+  swift: 2.29.1.20220912
   tgtd: 1.0.79.20220912
-  trove-api: 17.0.0.20220912
-  trove-conductor: 17.0.0.20220912
-  trove-guestagent: 17.0.0.20220912
-  trove-taskmanager: 17.0.0.20220912
+  trove: 17.0.0.20220912
