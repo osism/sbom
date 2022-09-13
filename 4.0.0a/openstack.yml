@@ -315,6 +315,7 @@ versions:
   multipathd: 0.8.3.20220912
   neutron: 20.2.0.20220912
   nova: 25.0.1.20220912
+  nova_libvirt: 8.0.0.20220912
   octavia: 10.0.0.20220912
   openvswitch: 2.17.2.20220912
   ovn: 22.03.0.20220912
