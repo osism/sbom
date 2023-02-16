@@ -3,7 +3,6 @@
 import io
 import os
 import subprocess
-import sys
 
 from loguru import logger
 import json
