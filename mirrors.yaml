@@ -83,8 +83,6 @@ containers:
   - quay.io/osism/barbican-keystone-listener
   - quay.io/osism/barbican-worker
   - quay.io/osism/bifrost-deploy
-  - quay.io/osism/blazar-api
-  - quay.io/osism/blazar-manager
   - quay.io/osism/ceilometer-central
   - quay.io/osism/ceilometer-compute
   - quay.io/osism/ceilometer-ipmi
