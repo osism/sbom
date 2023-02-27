@@ -308,6 +308,7 @@ containers:
   - https://registry-1.docker.io/openpolicyagent/opa-docker-authz-v2
   - https://registry-1.docker.io/phpmyadmin/phpmyadmin
   - https://registry-1.docker.io/rundeck/rundeck
+  - https://registry-1.docker.io/ubuntu/squid
 deb_mirrors:
   - deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse
   - deb [arch=amd64] http://de.archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse
