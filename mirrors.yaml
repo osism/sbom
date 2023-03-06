@@ -305,7 +305,6 @@ containers:
   - registry-1.docker.io/library/redis
   - registry-1.docker.io/library/registry
   - registry-1.docker.io/library/traefik
-  - registry-1.docker.io/openpolicyagent/opa-docker-authz-v2
   - registry-1.docker.io/phpmyadmin/phpmyadmin
   - registry-1.docker.io/rundeck/rundeck
   - registry-1.docker.io/ubuntu/squid
