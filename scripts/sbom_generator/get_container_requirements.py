@@ -10,12 +10,12 @@ def get_requirements() -> list:
         except yaml.YAMLError as exc:
             print(exc)
 
-    for mirror in content['mirrors']:
+    for mirror in content["mirrors"]:
         for path in mirror["paths"]:
             item = {
                 "name": f"{mirror['url'].replace('https://', '').replace('.', '-')}-{path.replace('/', '-')}",
                 "url": mirror["url"],
-                "path": path
+                "path": path,
             }
             container_list.append(item)
 

@@ -10,7 +10,7 @@ def get_deb_list() -> list:
         except yaml.YAMLError as exc:
             print(exc)
 
-    for mirror in content['mirrors']:
+    for mirror in content["mirrors"]:
         if mirror not in deb_list:
             deb_list.append(mirror)
 
