@@ -26,7 +26,7 @@ def clone_repos(user: str) -> None:
 
     for repo in get_repo_urls(user):
         try:
-            repo_name = repo.split('/')[-1]  # foo.git
+            repo_name = repo.split("/")[-1]  # foo.git
             repo_name = repo_name.removesuffix(".git")  # foo
             clone_destination = f"repos/{repo_name}"  # repos/foo
             git.Repo.clone_from(repo, clone_destination)

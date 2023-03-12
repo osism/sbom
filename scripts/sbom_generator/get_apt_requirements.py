@@ -54,7 +54,7 @@ def deep_analyse_yaml(package_list: list, file: str) -> list:
         # check if name is from loop:
         if "item" in package_value and "loop" in item:
             # with_items should not be used any more, therefore ignoring it.
-            for package in item['loop']:
+            for package in item["loop"]:
                 if package not in package_list:
                     package_list.append(package)
         else:
@@ -68,7 +68,9 @@ def deep_analyse_yaml(package_list: list, file: str) -> list:
                 # if it's a variable, try to find the value of it
                 if foo.startswith("{{"):
                     bar = foo.split(" ")[1]
-                    for file in find_requirements_files("*.yml") + find_requirements_files("*.yaml"):
+                    for file in find_requirements_files(
+                        "*.yml"
+                    ) + find_requirements_files("*.yaml"):
                         with open(file) as stream:
                             content = stream.read().splitlines()
 
@@ -79,7 +81,7 @@ def deep_analyse_yaml(package_list: list, file: str) -> list:
                             if len(line.split(" ")) < 2:
                                 continue
 
-                            baz = line[line.index(":") + 1:].lstrip()
+                            baz = line[line.index(":") + 1 :].lstrip()
                             if "{{" not in baz:
                                 if baz not in package_list:
                                     package_list.append(baz)

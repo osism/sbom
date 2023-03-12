@@ -29,7 +29,7 @@ def get_galaxy_installs() -> dict:
                 foo = line.rstrip(" \\")
 
                 # remove prefixes like RUN from Containerfiles
-                foo = foo[foo.find('ansible-galaxy'):]
+                foo = foo[foo.find("ansible-galaxy") :]
 
                 # remove additional command parameters
                 if " -v " in foo:
@@ -139,8 +139,22 @@ def get_requirements_files() -> list:
         if "collections" in content:
             for collection in content["collections"]:
                 if "source" not in collection:
-                    content["collections"][content["collections"].index(collection)]["source"] = content["collections"][content["collections"].index(collection)]["name"]
-                    content["collections"][content["collections"].index(collection)]["name"] = content["collections"][content["collections"].index(collection)]["name"].split(".")[-2].replace("/", "-")
+                    content["collections"][content["collections"].index(collection)][
+                        "source"
+                    ] = content["collections"][
+                        content["collections"].index(collection)
+                    ][
+                        "name"
+                    ]
+                    content["collections"][content["collections"].index(collection)][
+                        "name"
+                    ] = (
+                        content["collections"][
+                            content["collections"].index(collection)
+                        ]["name"]
+                        .split(".")[-2]
+                        .replace("/", "-")
+                    )
             result["collections"] = result["collections"] + content["collections"]
 
         if "roles" in content:
