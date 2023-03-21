@@ -279,6 +279,7 @@ versions:
   ceilometer: 19.0.1.20230321
   cinder: 21.1.1.20230321
   cloudkitty: 17.0.1.20230321
+  cron: 3.0pl1.20230313
   designate: 15.0.1.20230321
   dnsmasq: 2.86.20230321
   etcd: 3.3.27.20230321
@@ -307,6 +308,8 @@ versions:
   nova: 26.1.1.20230321
   nova_libvirt: 8.0.0.20230321
   octavia: 11.0.1.20230321
+  opensearch: 2.3.0.20230321
+  opensearch_dashboards: 2.3.0.20230321
   openvswitch: 3.0.1.20230321
   ovn: 22.9.0.20230321
   placement: 8.0.0.0.20230321
@@ -327,6 +330,7 @@ versions:
   rabbitmq: 3.11.11.20230321
   redis: 6.0.16.20230321
   senlin: 14.0.0.0.20230321
+  skyline: 1.0.0.0.20230321
   swift: 2.30.1.20230321
   tgtd: 1.0.80.20230321
   trove: 18.0.1.20230321
