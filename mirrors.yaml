@@ -307,61 +307,88 @@ containers:
   - registry-1.docker.io/rundeck/rundeck
   - registry-1.docker.io/ubuntu/squid
 deb_mirrors:
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
     mirror: 'http://de.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
     mirror: 'http://de.archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
     mirror: 'http://de.archive.ubuntu.com/ubuntu jammy-security main restricted universe multiverse'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
     mirror: 'http://de.archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x790bc7277767219c42c86f933b4fe6acc0b21f32'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x790bc7277767219c42c86f933b4fe6acc0b21f32'
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
     mirror: 'http://de.archive.ubuntu.com/ubuntu focal main restricted universe multiverse'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x790bc7277767219c42c86f933b4fe6acc0b21f32'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x790bc7277767219c42c86f933b4fe6acc0b21f32'
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
     mirror: 'http://de.archive.ubuntu.com/ubuntu focal-backports main restricted universe multiverse'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x790bc7277767219c42c86f933b4fe6acc0b21f32'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x790bc7277767219c42c86f933b4fe6acc0b21f32'
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
     mirror: 'http://de.archive.ubuntu.com/ubuntu focal-security main restricted universe multiverse'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x790bc7277767219c42c86f933b4fe6acc0b21f32'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x790bc7277767219c42c86f933b4fe6acc0b21f32'
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
     mirror: 'http://de.archive.ubuntu.com/ubuntu focal-updates main restricted universe multiverse'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x391a9aa2147192839e9db0315edb1b62ec4926ea'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x391a9aa2147192839e9db0315edb1b62ec4926ea'
     mirror: 'http://ubuntu-cloud.archive.canonical.com/ubuntu jammy-updates/zed main'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x391a9aa2147192839e9db0315edb1b62ec4926ea'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x391a9aa2147192839e9db0315edb1b62ec4926ea'
     mirror: 'http://ubuntu-cloud.archive.canonical.com/ubuntu jammy-updates/antelope main'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x391a9aa2147192839e9db0315edb1b62ec4926ea'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x391a9aa2147192839e9db0315edb1b62ec4926ea'
     mirror: 'http://ubuntu-cloud.archive.canonical.com/ubuntu focal-updates/xena main'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x391a9aa2147192839e9db0315edb1b62ec4926ea'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x391a9aa2147192839e9db0315edb1b62ec4926ea'
     mirror: 'http://ubuntu-cloud.archive.canonical.com/ubuntu focal-updates/yoga main'
-  - gpg_url: 'http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/Release.key'
+  - gpg_urls:
+      - 'http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/Release.key'
     mirror: 'http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04 /'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x4d8eb5fda37ab55f41a135203bf88a0c6a770882'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x4d8eb5fda37ab55f41a135203bf88a0c6a770882'
     mirror: 'http://ppa.launchpad.net/qpid/released/ubuntu focal main'
-  - gpg_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x0a9af2115f4687bd29803a206b73a36e6026dfca'
+  - gpg_urls:
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x0a9af2115f4687bd29803a206b73a36e6026dfca'
+      - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xb279943d2a549531e144b875f77f1eda57ebb1cc'
     mirror: 'http://ppa.launchpad.net/rabbitmq/rabbitmq-erlang/ubuntu focal main'
-  - gpg_url: 'https://packages.cloud.google.com/apt/doc/apt-key.gpg.asc'
+  - gpg_urls:
+      - 'https://packages.cloud.google.com/apt/doc/apt-key.gpg.asc'
     mirror: 'https://apt.kubernetes.io kubernetes-xenial main'
-  - gpg_url: 'https://apt.releases.hashicorp.com/gpg'
+  - gpg_urls:
+      - 'https://apt.releases.hashicorp.com/gpg'
     mirror: 'https://apt.releases.hashicorp.com focal main'
-  - gpg_url: 'https://aquasecurity.github.io/trivy-repo/deb/public.key'
+  - gpg_urls:
+      - 'https://aquasecurity.github.io/trivy-repo/deb/public.key'
     mirror: 'https://aquasecurity.github.io/trivy-repo/deb focal main'
-  - gpg_url: 'https://falco.org/repo/falcosecurity-3672BA8F.asc'
-    mirror: 'https://dl.bintray.com/falcosecurity/deb stable main'
-  - gpg_url: 'https://download.ceph.com/keys/release.asc'
+  - gpg_urls:
+      - 'https://download.ceph.com/keys/release.asc'
     mirror: 'https://download.ceph.com/debian-pacific focal main'
-  - gpg_url: 'https://download.ceph.com/keys/release.asc'
+  - gpg_urls:
+      - 'https://download.ceph.com/keys/release.asc'
     mirror: 'https://download.ceph.com/debian-quincy focal main'
-  - gpg_url: 'https://download.docker.com/linux/ubuntu/gpg'
+  - gpg_urls:
+      - 'https://download.docker.com/linux/ubuntu/gpg'
     mirror: 'https://download.docker.com/linux/ubuntu jammy stable'
-  - gpg_url: 'https://packagecloud.io/netdata/netdata-edge/gpgkey'
+  - gpg_urls:
+      - 'https://packagecloud.io/netdata/netdata-edge/gpgkey'
     mirror: 'https://packagecloud.io/netdata/netdata-edge/ubuntu jammy main'
-  - gpg_url: 'https://packagecloud.io/rabbitmq/rabbitmq-server/gpgkey'
+  - gpg_urls:
+      - 'https://packagecloud.io/rabbitmq/rabbitmq-server/gpgkey'
     mirror: 'https://packagecloud.io/rabbitmq/rabbitmq-server/ubuntu jammy main'
-  - gpg_url: 'https://download.sysdig.com/DRAIOS-GPG-KEY.public'
-    mirror: 'https://download.sysdig.com/stable/deb stable-amd64'
-  - gpg_url: 'https://packages.cisofy.com/keys/cisofy-software-rpms-public.key'
+  - gpg_urls:
+      - 'https://packages.cisofy.com/keys/cisofy-software-public.key'
     mirror: 'https://packages.cisofy.com/community/lynis/deb stable main'
-  - gpg_url: 'https://apt.grafana.com/gpg.key'
+  - gpg_urls:
+      - 'https://apt.grafana.com/gpg.key'
     mirror: 'https://packages.grafana.com/oss/deb stable main'
-  - gpg_url: 'https://repos.influxdata.com/influxdata-archive_compat.key'
+  - gpg_urls:
+      - 'https://repos.influxdata.com/influxdata-archive_compat.key'
     mirror: 'https://repos.influxdata.com/ubuntu jammy stable'
 deb_packages:
   - amd64-microcode
