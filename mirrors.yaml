@@ -358,7 +358,7 @@ deb_mirrors:
       - 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xb279943d2a549531e144b875f77f1eda57ebb1cc'
     mirror: 'http://ppa.launchpad.net/rabbitmq/rabbitmq-erlang/ubuntu focal main'
   - gpg_urls:
-      - 'https://packages.cloud.google.com/apt/doc/apt-key.gpg.asc'
+      - 'https://packages.cloud.google.com/apt/doc/apt-key.gpg'
     mirror: 'https://apt.kubernetes.io kubernetes-xenial main'
   - gpg_urls:
       - 'https://apt.releases.hashicorp.com/gpg'
