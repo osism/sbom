@@ -3,6 +3,7 @@
 import io
 import os
 import subprocess
+import sys
 
 from loguru import logger
 import json
@@ -10,6 +11,15 @@ import yaml
 
 VERSION = os.environ.get("VERSION", "3.2.0")
 LIST = os.environ.get("LIST", "openstack")
+
+level = "INFO"
+log_fmt = (
+    "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | "
+    "<level>{message}</level>"
+)
+
+logger.remove()
+logger.add(sys.stderr, format=log_fmt, level=level, colorize=True)
 
 with open(os.path.join(VERSION, f"{LIST}.yml")) as fp:
     data = yaml.load(fp, Loader=yaml.SafeLoader)
