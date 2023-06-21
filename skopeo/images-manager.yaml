@@ -1,0 +1,12 @@
+---
+harbor.services.osism.tech:
+  images-by-tag-regex:
+    osism/ara-server: ^.*$
+    osism/ceph-ansible: ^.*$
+    osism/inventory-reconciler: ^.*$
+    osism/kolla-ansible: ^.*$
+    osism/osism-ansible: ^.*$
+    osism/osism-netbox: ^.*$
+    osism/osism: ^.*$
+    osism/netbox: ^.*$
+    osism/openstackclient: ^.*$
