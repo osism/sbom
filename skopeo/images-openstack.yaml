@@ -51,7 +51,7 @@ harbor.services.osism.tech:
     kolla/ironic-pxe: (yoga|zed|2023.1)
     kolla/iscsid: (yoga|zed|2023.1)
     kolla/keepalived: (yoga|zed|2023.1)
-    kolla/keystone-ferne: (yoga|zed|2023.1)t
+    kolla/keystone-fernet: (yoga|zed|2023.1)
     kolla/keystone-ssh: (yoga|zed|2023.1)
     kolla/keystone: (yoga|zed|2023.1)
     kolla/kolla-toolbox: (yoga|zed|2023.1)
