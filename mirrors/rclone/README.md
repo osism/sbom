@@ -5,8 +5,8 @@
 Create a S3 credential with the OpenStack CLI:
 
 ```
-openstack images ec2 credentials create
-openstack images ec2 credentials list
+openstack ec2 credentials create
+openstack ec2 credentials list
 ```
 
 Copy ``rclone.conf`` to ``$HOME/.config/rclone/rclone.conf``. Adjust source and destination
