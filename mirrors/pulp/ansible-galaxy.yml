@@ -1,0 +1,26 @@
+---
+collections:
+  - ansible.netcommon
+  - ansible.posix
+  - ansible.utils
+  - cloud.common
+  - community.crypto
+  - community.docker
+  - community.general
+  - community.grafana
+  - community.hashi_vault
+  - community.libvirt
+  - community.mysql
+  - community.network
+  - community.postgresql
+  - community.rabbitmq
+  - containers.podman
+  - debops.debops
+  - kubernetes.core
+  - netbox.netbox
+  - openstack.cloud
+  - osism.commons
+  - osism.playbooks
+  - osism.services
+  - osism.validations
+  - stackhpc.cephadm
