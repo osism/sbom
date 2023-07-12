@@ -1,2 +1,3 @@
 *.py[cod]
 scripts/sbom_generator/repos
+config.yaml
