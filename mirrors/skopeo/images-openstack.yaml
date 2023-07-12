@@ -28,8 +28,8 @@ harbor.services.osism.tech:
     kolla/designate-sink: (yoga|zed|2023.1)
     kolla/designate-worker: (yoga|zed|2023.1)
     kolla/dnsmasq: (yoga|zed|2023.1)
-    kolla/elasticsearch-curator: (yoga|zed|2023.1)
-    kolla/elasticsearch: (yoga|zed|2023.1)
+    kolla/elasticsearch-curator: yoga
+    kolla/elasticsearch: yoga
     kolla/etcd: (yoga|zed|2023.1)
     kolla/fluentd: (yoga|zed|2023.1)
     kolla/glance-api: (yoga|zed|2023.1)
@@ -140,3 +140,7 @@ harbor.services.osism.tech:
     kolla/trove-conductor: (yoga|zed|2023.1)
     kolla/trove-guestagent: (yoga|zed|2023.1)
     kolla/trove-taskmanager: (yoga|zed|2023.1)
+    kolla/zun-api: (zed|2023.1)
+    kolla/zun-cni-daemon: (zed|2023.1)
+    kolla/zun-compute: (zed|2023.1)
+    kolla/zun-wsproxy: (zed|2023.1)
