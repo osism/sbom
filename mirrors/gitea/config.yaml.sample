@@ -1,0 +1,10 @@
+---
+# gitea
+gitea_owner:             # organisation
+gitea_token:             # required scope: repo
+gitea_api_url:           # e.g. https://git.regio.digital/api/v1
+# gitea_api_ssl: False   # optional
+
+# github
+github_org: osism        # organisation
+# github_token:          # optional
