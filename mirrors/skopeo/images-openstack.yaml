@@ -120,6 +120,7 @@ harbor.services.osism.tech:
     kolla/prometheus-openstack-exporter: (yoga|zed|2023.1)
     kolla/prometheus-ovn-exporter: (yoga|zed|2023.1)
     kolla/prometheus-v2-server: (yoga|zed|2023.1)
+    kolla/proxysql: (zed|2023.1)
     kolla/rabbitmq: (yoga|zed|2023.1)
     kolla/redis-sentinel: (yoga|zed|2023.1)
     kolla/redis: (yoga|zed|2023.1)
