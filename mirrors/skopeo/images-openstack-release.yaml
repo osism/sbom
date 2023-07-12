@@ -1,8 +1,6 @@
 ---
 harbor.services.osism.tech:
   images-by-tag-regex:
-    kolla/elasticsearch-curator: ^.*$
-    kolla/elasticsearch: ^.*$
     kolla/release/aodh-api: ^.*$
     kolla/release/aodh-evaluator: ^.*$
     kolla/release/aodh-expirer: ^.*$
@@ -30,6 +28,8 @@ harbor.services.osism.tech:
     kolla/release/designate-sink: ^.*$
     kolla/release/designate-worker: ^.*$
     kolla/release/dnsmasq: ^.*$
+    kolla/release/elasticsearch-curator: ^.*$
+    kolla/release/elasticsearch: ^.*$
     kolla/release/etcd: ^.*$
     kolla/release/fluentd: ^.*$
     kolla/release/glance-api: ^.*$
@@ -140,3 +140,7 @@ harbor.services.osism.tech:
     kolla/release/trove-conductor: ^.*$
     kolla/release/trove-guestagent: ^.*$
     kolla/release/trove-taskmanager: ^.*$
+    kolla/release/zun-api: ^.*$
+    kolla/release/zun-cni-daemon: ^.*$
+    kolla/release/zun-compute: ^.*$
+    kolla/release/zun-wsproxy: ^.*$
