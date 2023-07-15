@@ -1,5 +1,5 @@
 ---
-harbor.services.osism.tech:
+osism.harbor.regio.digital:
   images-by-tag-regex:
     kolla/release/aodh-api: ^.*$
     kolla/release/aodh-evaluator: ^.*$
