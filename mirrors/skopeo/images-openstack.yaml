@@ -1,5 +1,5 @@
 ---
-harbor.services.osism.tech:
+osism.harbor.regio.digital:
   images-by-tag-regex:
     kolla/aodh-api: (yoga|zed|2023.1)
     kolla/aodh-evaluator: (yoga|zed|2023.1)
