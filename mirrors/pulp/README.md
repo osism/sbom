@@ -101,22 +101,46 @@ timeout = 0
 verbose = 0
 ```
 
+Create a mirror user.
+
+```
+pulp user create --username ansible_viewer --password password
+pulp user role-assignment add \
+  --role ansible.ansibledistribution_viewer \
+  --username ansible_viewer \
+  --object ""
+```
+
 ## Ansible collections & roles
 
 Run the ``ansible.sh`` script to prepare and sync all defined roles and
 collections.
+
+```
+bash ansible.sh
+```
 
 ### Ansible configuration
 
 ```
 # Mirrored content on Pulp can be viewed and extended in the following
 # repository: https://github.com/osism/sbom/tree/main/mirrors/pulp
+#
+# The used account is only assigned viewer rights and we use this to
+# provide access not completely public.
 
 [galaxy]
-server_list = osism,galaxy
+server_list = collections,roles,galaxy
 
-[galaxy_server.osism]
-url = http://osism.pulp.regio.digital:8080/pulp/content/ansible/
+[galaxy_server.collections]
+url = http://osism.pulp.regio.digital:8080/pulp_ansible/galaxy/ansible_collections/
+username = ansible_viewer
+password = password
+
+[galaxy_server.roles]
+url = http://osism.pulp.regio.digital:8080/pulp_ansible/galaxy/ansible_roles/
+username = ansible_viewer
+password = password
 
 [galaxy_server.galaxy]
 url = https://galaxy.ansible.com/
