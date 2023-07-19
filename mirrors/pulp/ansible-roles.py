@@ -10,8 +10,9 @@ with open("ansible-roles.yml", "r+") as fp:
 for x in data:
     namespace, name = x.split(".")
     subprocess.run(
-        f"pulp ansible remote -t role create --name {x} --url https://galaxy.ansible.com/api/v1/roles/?format=json&namespace__name={namespace}&repository__name={name}"
+        f"pulp ansible remote -t role create --name {x} --url https://galaxy.ansible.com/api/v1/roles/?format=json&namespace__name={namespace}&repository__name={name}",
+        shell=True,
     )
     subprocess.run(
-        f"pulp ansible repository sync --name ansible-galaxy --remote role:{x}"
+        f"pulp ansible repository sync --name ansible --remote role:{x}", shell=True
     )

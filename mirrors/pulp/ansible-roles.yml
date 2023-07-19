@@ -1,7 +1,7 @@
 ---
 - geerlingguy.certbot
 - geerlingguy.dotfiles
-- pdns_recursor
+- powerdns.pdns_recursor
 - stackhpc.libvirt_host
 - stackhpc.libvirt_vm
 - stackhpc.luks
