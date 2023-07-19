@@ -15,10 +15,6 @@
   url: https://download.docker.com/linux/ubuntu
   distribution: jammy
   component: stable
-- name: falco-jammy
-  url: https://dl.bintray.com/falcosecurity/deb
-  distribution: stable
-  component: main
 - name: ceph-jammy-quincy
   url: https://download.ceph.com/debian-quincy
   distribution: jammy

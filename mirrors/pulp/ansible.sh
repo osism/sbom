@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-pulp ansible repository create --name "ansible-galaxy"
+pulp ansible repository create --name "ansible"
 
 pulp ansible remote -t "collection" create \
-    --name "ansible-galaxy" \
+    --name "ansible" \
     --url "https://galaxy.ansible.com/" \
     --requirements @ansible-collections.yml
 pulp ansible repository sync \
-    --name "ansible-galaxy" \
-    --remote "ansible-galaxy"
+    --name "ansible" \
+    --remote "ansible"
 
 python3 ansible-roles.py
 
 pulp ansible distribution create \
-    --name "ansible-galaxy" \
-    --base-path "ansible-galaxy" \
-    --repository "ansible-galaxy"
+    --name "ansible" \
+    --base-path "ansible" \
+    --repository "ansible"

@@ -25,7 +25,7 @@ for x in data:
         shell=True,
     )
     subprocess.run(
-        f"pulp deb publication create --repository {x['name']} --structured", shell=True
+        f"pulp deb publication -t verbatim create --repository {x['name']}", shell=True
     )
     subprocess.run(
         f"pulp deb distribution create --name {x['name']} --base-path {x['name']} --repository {x['name']}",
