@@ -1,0 +1,8 @@
+---
+- geerlingguy.certbot
+- geerlingguy.dotfiles
+- pdns_recursor
+- stackhpc.libvirt_host
+- stackhpc.libvirt_vm
+- stackhpc.luks
+- stackhpc.systemd_networkd

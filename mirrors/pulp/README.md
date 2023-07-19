@@ -90,7 +90,7 @@ Create a mirror user.
 pulp user create --username mirror --password password
 ```
 
-## Ansible collections
+## Ansible collections & roles
 
 ```
 pulp user role-assignment add \
