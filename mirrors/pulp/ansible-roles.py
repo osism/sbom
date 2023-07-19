@@ -14,5 +14,5 @@ for x in data:
         shell=True,
     )
     subprocess.run(
-        f"pulp ansible repository sync --name ansible --remote role:{x}", shell=True
+        f"pulp ansible repository sync --name ansible_roles --remote role:{x}", shell=True
     )
