@@ -1,4 +1,4 @@
-# Ansible Collections Mirroring
+# Pulp
 
 * https://pulpproject.org
 
@@ -15,6 +15,7 @@ CONTENT_ORIGIN='http://osism.pulp.regio.digital:8080'
 ANSIBLE_API_HOSTNAME='http://osism.pulp.regio.digital:8080'
 ANSIBLE_CONTENT_HOSTNAME='http://osism.pulp.regio.digital:8080/pulp/content'
 CACHE_ENABLED=True
+FORCE_IGNORE_MISSING_PACKAGE_INDICES=True
 ```
 
 ```
@@ -65,7 +66,7 @@ curl localhost:8080/pulp/api/v3/status/
 Install and configure the CLI.
 
 ```
-pip3 install pulp-cli
+pip3 install pulp-cli pulp-cli-deb
 pulp config create -e
 cat .config/pulp/cli.toml
 [cli]
@@ -87,6 +88,11 @@ Create a mirror user.
 
 ```
 pulp user create --username mirror --password password
+```
+
+## Ansible collections
+
+```
 pulp user role-assignment add \
     --role ansible.ansibledistribution_viewer \
     --username mirror  \
@@ -135,7 +141,7 @@ Started background task /pulp/api/v3/tasks/018969ca-899f-7cf5-9a97-b36570057350/
 }
 ```
 
-## Add new collections
+### Add new collections
 
 ```
 pulp ansible remote -t "collection" update \
@@ -144,7 +150,7 @@ pulp ansible remote -t "collection" update \
     --requirements @ansible-galaxy.yml
 ```
 
-## Sync repository
+### Sync repository
 
 ```
 pulp ansible repository sync \
@@ -157,7 +163,7 @@ pulp ansible distribution create \
     --repository "mirror"
 ```
 
-## Ansible configuration
+### Ansible configuration
 
 ```
 # Mirrored content on Pulp can be viewed and extended in the following
@@ -176,4 +182,12 @@ password = password
 
 [galaxy_server.galaxy]
 url = https://galaxy.ansible.com/
+```
+
+## Ubuntu/Debian packages
+
+### Ubuntu 22.04 (Focal)
+
+```
+python3 ubuntu.py
 ```
