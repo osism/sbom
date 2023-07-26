@@ -51,7 +51,7 @@ osism.harbor.regio.digital:
     kolla/release/ironic-pxe: ^.*$
     kolla/release/iscsid: ^.*$
     kolla/release/keepalived: ^.*$
-    kolla/release/keystone-ferne: ^.*$t
+    kolla/release/keystone-fernet: ^.*$
     kolla/release/keystone-ssh: ^.*$
     kolla/release/keystone: ^.*$
     kolla/release/kolla-toolbox: ^.*$
