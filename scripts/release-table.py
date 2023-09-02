@@ -58,7 +58,11 @@ else:
         else:
             release_version_a = parsed_version_a
 
-        image_version_b = openstack_b["versions"][image]
+        try:
+            image_version_b = openstack_b["versions"][image]
+        except KeyError:
+            next
+
         try:
             parsed_version_b = version.parse(image_version_b[:-9])
         except version.InvalidVersion:
