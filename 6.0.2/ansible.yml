@@ -1,0 +1,32 @@
+ansible_roles:
+  geerlingguy.certbot: 08543f45b226f1c0a012581ca4166dd0b6b9cbf2
+  geerlingguy.dotfiles: 20988f9859d15710d90c62dd44336a28f141e831
+  hardening: e77c311442cb1d1ef8caa7df9d9c00471afa75e7
+  pdns_recursor: 'v1.6.0'
+  stackhpc.libvirt_host: 27144f846d2c088d9de0d633f2ad26060bd8e5e7
+  stackhpc.libvirt_vm: 0c08b28ce3547878e104adc284e09c947809df50
+  stackhpc.luks: 81faff11713675f4e35126587445b52732b02aba
+  stackhpc.systemd_networkd: 80ab24aef2ebd63fa64783007ca8fa3707bcf558
+
+ansible_collections:
+  ansible.netcommon: '5.1.2'
+  ansible.posix: '1.5.4'
+  ansible.utils: '2.8.0'
+  cloud.common: '2.1.2'
+  community.crypto: '2.9.0'
+  community.docker: '2.7.3'
+  community.general: '7.3.0'
+  community.grafana: '1.5.3'
+  community.hashi_vault: '3.4.0'
+  community.mysql: '3.5.1'
+  community.network: '5.0.0'
+  community.rabbitmq: '1.2.3'
+  containers.podman: '1.10.1'
+  debops.debops: '3.0.5'
+  kubernetes.core: '2.3.2'
+  netbox.netbox: '3.14.0'
+  openstack.cloud: '2.1.0'
+  osism.commons: '0.20231126.0'
+  osism.services: '0.20231126.0'
+  osism.validations: '0.20231126.0'
+  stackhpc.cephadm: '1.14.0'
