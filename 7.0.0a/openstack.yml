@@ -164,4 +164,5 @@ versions:
   rabbitmq: 3.12.12.20240204
   redis: 6.0.16.20240204
   skyline: 3.0.1.20240204
+  skyline_console: 3.0.0.20240204
   tgtd: 1.0.80.20240204
