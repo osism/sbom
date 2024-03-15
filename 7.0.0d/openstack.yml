@@ -166,6 +166,8 @@ images:
   image: osism.harbor.regio.digital/kolla/release/prometheus-blackbox-exporter:0.24.0.20240313
 - digest: sha256:f4f5e571ba998fc58fa1e2a571d46a5ff72bcaa4426c19064c52fcecd2eb0448
   image: osism.harbor.regio.digital/kolla/release/prometheus-elasticsearch-exporter:1.6.0.20240313
+- digest: sha256:c022daaf0cfe543de56fa6abd92f29d42b5389625826107c2305d8650714ebaa
+  image: osism.harbor.regio.digital/kolla/release/prometheus-libvirt-exporter:7.0.0.20240307
 - digest: sha256:0c274e8b9db38c348dd96c7929f7e9e7b2ef5898494e7007f3156549485cc3c4
   image: osism.harbor.regio.digital/kolla/release/prometheus-memcached-exporter:0.13.0.20240313
 - digest: sha256:6950e9de944660f321bc2294531a455f406a94f0e672ef50f1a65eb12e546b2b
@@ -178,6 +180,8 @@ images:
   image: osism.harbor.regio.digital/kolla/release/prometheus-mysqld-exporter:0.15.0.20240313
 - digest: sha256:1bd86a85f03b0a92f999aed7476130225f11c2979ee7ab4411811565ed9db7b2
   image: osism.harbor.regio.digital/kolla/release/mariadb-server:10.11.7.20240313
+- digest: sha256:3b17de28127bb6ab302be46620a53d94d032771874b53d159c241978cde7253e
+  image: osism.harbor.regio.digital/kolla/release/prometheus-openstack-exporter:7.0.0.20240307
 - digest: sha256:4e8658d5db553bad9418e7e577bf5b6a8cdd005ed6cbc1cec8f38da1124d2c55
   image: osism.harbor.regio.digital/kolla/release/mariadb-clustercheck:10.11.7.20240313
 - digest: sha256:6808bfaea6346b8369179794da6e8b9a838de6d5f930c9cabc648ab5cd5ae8d7
@@ -269,11 +273,13 @@ versions:
   prometheus_cadvisor: 0.47.2.20240313
   prometheus_elasticsearch_exporter: 1.6.0.20240313
   prometheus_haproxy_exporter: 0.15.0.20240313
+  prometheus_libvirt_exporter: 7.0.0.20240307
   prometheus_memcached_exporter: 0.13.0.20240313
   prometheus_msteams: 1.5.2.20240313
   prometheus_mtail: 3.0.0.20240313
   prometheus_mysqld_exporter: 0.15.0.20240313
   prometheus_node_exporter: 1.7.0.20240313
+  prometheus_openstack_exporter: 7.0.0.20240307
   proxysql: 2.5.5.20240313
   rabbitmq: 3.12.13.20240313
   redis: 6.0.16.20240313
