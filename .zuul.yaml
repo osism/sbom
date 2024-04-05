@@ -1,0 +1,19 @@
+---
+- project:
+    merge-mode: squash-merge
+    default-branch: main
+    check:
+      jobs:
+        - flake8
+        - yamllint
+        - python-black
+    gate:
+      jobs:
+        - flake8
+        - yamllint
+        - python-black
+    periodic-daily:
+      jobs:
+        - flake8
+        - yamllint
+        - python-black

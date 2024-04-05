@@ -276,7 +276,7 @@ images:
 - digest: sha256:0810b8d98670d3d228fb19ca6574121986cbe7e4dd9b928a1bd17a00f8938a54
   image: quay.io/osism/cron:3.0pl1.20220912
 
-versions: 
+versions:
   aodh: 14.0.0.20220912
   barbican: 14.0.0.20220912
   bifrost: 14.0.0.20220912
