@@ -5,7 +5,7 @@ from packaging import version
 
 from loguru import logger
 from tabulate import tabulate
-from yaml import dump, safe_load, YAMLError
+from yaml import safe_load, YAMLError
 
 RELEASE_A = os.environ.get("RELEASE_A", "5.0.0")
 RELEASE_B = os.environ.get("RELEASE_B", None)
@@ -34,7 +34,7 @@ if not RELEASE_B:
         except version.InvalidVersion:
             parsed_version = image_version[:-9]
 
-        if not type(parsed_version) == str:
+        if not type(parsed_version) is str:
             release_version = ".".join([str(x) for x in list(parsed_version.release)])
         else:
             release_version = parsed_version
@@ -51,7 +51,7 @@ else:
             parsed_version_a = version.parse(image_version_a[:-9])
         except version.InvalidVersion:
             parsed_version_a = image_version_a[:-9]
-        if not type(parsed_version_a) == str:
+        if not type(parsed_version_a) is str:
             release_version_a = ".".join(
                 [str(x) for x in list(parsed_version_a.release)]
             )
@@ -67,7 +67,7 @@ else:
             parsed_version_b = version.parse(image_version_b[:-9])
         except version.InvalidVersion:
             parsed_version_b = image_version_b[:-9]
-        if not type(parsed_version_a) == str:
+        if not type(parsed_version_a) is str:
             release_version_b = ".".join(
                 [str(x) for x in list(parsed_version_b.release)]
             )

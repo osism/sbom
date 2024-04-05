@@ -34,6 +34,7 @@ def mirror_github_repository(
         f"Mirroring {payload['clone_addr']} -> {payload['repo_owner']}/{payload['repo_name']}"
     )
     result = requests.post(url=url, headers=headers, json=payload, verify=enable_ssl)
+    return result
 
 
 def get_headers(token: str) -> dict:
