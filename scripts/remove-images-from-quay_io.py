@@ -76,9 +76,9 @@ def main(
     precheck(version, force)
 
     if not no_confirm:
-        logger.info(f"Running WITH confirmation!")
+        logger.info("Running WITH confirmation!")
     else:
-        logger.warning(f"Running WITHOUT confirmation! (wait 5 seconds)")
+        logger.warning("Running WITHOUT confirmation! (wait 5 seconds)")
         time.sleep(5)
 
     imageList = getImageList(version)
@@ -118,10 +118,10 @@ def processToken(token: str) -> str:
     Parses the quay.io bearer token either via CLI or ENV
     """
     if token is not None:
-        logger.info(f"Using bearer token provided via CLI")
+        logger.info("Using bearer token provided via CLI")
     else:
         logger.info(
-            f"Using bearer token provided via environment variable $QUAY_BEARER_TOKEN"
+            "Using bearer token provided via environment variable $QUAY_BEARER_TOKEN"
         )
         token = os.environ.get("QUAY_BEARER_TOKEN", "")
 
@@ -171,7 +171,7 @@ def getImageList(version: str) -> List[Dict[str, Any]]:
     if not isinstance(y, dict):
         error_and_fail("Response yaml is not a dictionary")
 
-    if not "images" in y:
+    if "images" not in y:
         error_and_fail("Response yaml is missing the 'images' list")
 
     return y["images"]
@@ -181,7 +181,7 @@ def getImageMeta(imageObject: Dict[str, Any], force: bool) -> str:
     """
     Parses the image meta data
     """
-    if not "image" in imageObject:
+    if "image" not in imageObject:
         error_and_fail("Image object has no attribute 'image'")
 
     image = imageObject["image"]
@@ -194,7 +194,7 @@ def getImageMeta(imageObject: Dict[str, Any], force: bool) -> str:
 
     imageMeta = image.split("/")[-1]
 
-    if not ":" in imageMeta:
+    if ":" not in imageMeta:
         error_and_fail(f"{imageMeta} does not contain a version string")
 
     return imageMeta.split(":")
@@ -209,7 +209,7 @@ def getImageDecision(imageRemoveURL: str, no_confirm: bool) -> bool:
 
     decision = None
 
-    while decision == None:
+    while decision is None:
         i = input(f"Confirm removal of image '{imageRemoveURL}': [yes/no] ")
         if i == "yes":
             decision = True
