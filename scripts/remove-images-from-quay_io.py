@@ -34,14 +34,19 @@ def error_and_fail(message: str) -> None:
     exit(1)
 
 
-IMAGE_PREFIX = "osism.harbor.regio.digital/kolla/release/"
+IMAGE_PREFIX = {
+    "4.0.0": "quay.io/osism/",
+    "5.0.0": "harbor.services.osism.tech/kolla/release/",
+    "6.0.0": "osism.harbor.regio.digital/kolla/release/",
+    "7.0.0": "osism.harbor.regio.digital/kolla/release/",
+}
 QUAY_PREFIX = "quay.io/osism"
 QUAY_BASE_API = "https://quay.io/api/v1/repository/osism"
 ADDITIONAL_REPOS = [
     "inventory-reconciler",
     "osism-ansible",
     "ceph-ansible",
-    "osism-kolla-ansible",
+    "kolla-ansible",
 ]
 
 
@@ -59,6 +64,10 @@ def main(
             "--no-confirm", "-c", help="Disable explicit confirmation of every removal"
         ),
     ] = False,
+    dry_run: Annotated[
+        bool,
+        typer.Option("--dry-run", "-d", help="Dry run. Do nothing."),
+    ] = False,
     token: Annotated[
         str,
         typer.Option(
@@ -71,7 +80,8 @@ def main(
 
     logger.info(f"Specified version is '{version}'")
 
-    token = processToken(token)
+    if not dry_run:
+        token = processToken(token)
 
     precheck(version, force)
 
@@ -81,12 +91,17 @@ def main(
         logger.warning("Running WITHOUT confirmation! (wait 5 seconds)")
         time.sleep(5)
 
+    if dry_run:
+        logger.info("Dry run. Nothing will be removed.")
+
     imageList = getImageList(version)
 
     logger.info(f"Found {len(imageList)} image(s) for version '{version}'")
 
+    logger.info("Removing kolla images...")
+
     for imageObject in imageList:
-        imageName, imageVersion = getImageMeta(imageObject, force)
+        imageName, imageVersion = getImageMeta(imageObject, version, force)
         imageRemoveURL = f"{QUAY_PREFIX}/{imageName}:{imageVersion}"
 
         if not getImageDecision(imageRemoveURL, no_confirm):
@@ -94,11 +109,12 @@ def main(
             continue
 
         logger.info(f"Removing '{imageRemoveURL}'...")
-        removeImage(token, imageName, imageVersion)
+        if not dry_run:
+            removeImage(token, imageName, imageVersion)
 
-    logger.info("Done removing images")
+    logger.info("Done removing kolla images")
 
-    logger.info("Removing meta images...")
+    logger.info("Removing other images...")
 
     for imageName in ADDITIONAL_REPOS:
         imageRemoveURL = f"{QUAY_PREFIX}/{imageName}:{version}"
@@ -108,9 +124,11 @@ def main(
             continue
 
         logger.info(f"Removing '{imageRemoveURL}'...")
-        removeImage(token, imageName, imageVersion)
 
-    logger.info("Done removing meta images")
+        if not dry_run:
+            removeImage(token, imageName, imageVersion)
+
+    logger.info("Done removing other images")
 
 
 def processToken(token: str) -> str:
@@ -177,7 +195,7 @@ def getImageList(version: str) -> List[Dict[str, Any]]:
     return y["images"]
 
 
-def getImageMeta(imageObject: Dict[str, Any], force: bool) -> str:
+def getImageMeta(imageObject: Dict[str, Any], version: str, force: bool) -> str:
     """
     Parses the image meta data
     """
@@ -186,7 +204,7 @@ def getImageMeta(imageObject: Dict[str, Any], force: bool) -> str:
 
     image = imageObject["image"]
 
-    if not image.startswith(IMAGE_PREFIX):
+    if not image.startswith(IMAGE_PREFIX[version[:-1]]):
         warning_or_error(
             f"Image '{image}' does not start with known image prefix '{IMAGE_PREFIX}'",
             force,
