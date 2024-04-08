@@ -203,10 +203,11 @@ def getImageMeta(imageObject: Dict[str, Any], version: str, force: bool) -> str:
         error_and_fail("Image object has no attribute 'image'")
 
     image = imageObject["image"]
+    checkPrefix = IMAGE_PREFIX[version[:-1]]
 
-    if not image.startswith(IMAGE_PREFIX[version[:-1]]):
+    if not image.startswith(checkPrefix):
         warning_or_error(
-            f"Image '{image}' does not start with known image prefix '{IMAGE_PREFIX}'",
+            f"Image '{image}' does not start with known image prefix '{checkPrefix}'",
             force,
         )
 
