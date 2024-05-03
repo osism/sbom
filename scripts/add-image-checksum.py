@@ -9,7 +9,7 @@ from loguru import logger
 import json
 import yaml
 
-VERSION = os.environ.get("VERSION", "3.2.0")
+VERSION = os.environ.get("VERSION", "7.0.3")
 LIST = os.environ.get("LIST", "openstack")
 
 level = "INFO"
