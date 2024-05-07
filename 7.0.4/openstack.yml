@@ -12,24 +12,24 @@ images:
   image: osism.harbor.regio.digital/kolla/release/ovn-northd:24.3.1.20240319
 - digest: sha256:f93339c4e60e20bdc07b8143075885d65f6d8010cc7f99b9440d96453dbba3e4
   image: osism.harbor.regio.digital/kolla/release/ovn-sb-db-server:24.3.1.20240319
-- digest: sha256:b94dd40bcdd1455f8b51074ad8c23032e0d5725491dfbd4ef61a84bdb77b45bd
-  image: osism.harbor.regio.digital/kolla/release/nova-scheduler:28.0.2.20240319
-- digest: sha256:d60c149932c4e911c30e861daeecd19f24996b207ea217cbe85dc4da2265e78f
-  image: osism.harbor.regio.digital/kolla/release/nova-ssh:28.0.2.20240319
-- digest: sha256:735c5964989e4a5507d630afcf6ea789ba5a9d2a17fe3144b425ccc3824b249f
-  image: osism.harbor.regio.digital/kolla/release/nova-spicehtml5proxy:28.0.2.20240319
-- digest: sha256:c630b088fac361de6c2e0e2a9df3fc99bf33a7a0704482da3044cfd8d074a75e
-  image: osism.harbor.regio.digital/kolla/release/nova-compute-ironic:28.0.2.20240319
-- digest: sha256:edb4e17f0ecf4c9e1c879213332a28c5f3cfe2cd9fc97177152bee48a3e3a8a3
-  image: osism.harbor.regio.digital/kolla/release/nova-serialproxy:28.0.2.20240319
-- digest: sha256:3d5efad9edc7c99d5e07ad5289e7c3fd6ae4182219dc6fdba2b0a7ed60b93b59
-  image: osism.harbor.regio.digital/kolla/release/nova-api:28.0.2.20240319
-- digest: sha256:334e043b5ba5dbdff4007aacf24d79b5c22e2f44ffcbd224c064e3e42c6215c3
-  image: osism.harbor.regio.digital/kolla/release/nova-compute:28.0.2.20240319
-- digest: sha256:c5520e6699d277017a67dfa3f55967b1de586740192c4f14057d32e3739d4f4c
-  image: osism.harbor.regio.digital/kolla/release/nova-conductor:28.0.2.20240319
-- digest: sha256:5c4a77ccd8ae38a68146ae4a7d00db3b5e8cb8d193f2f168108e2a41f6796180
-  image: osism.harbor.regio.digital/kolla/release/nova-novncproxy:28.0.2.20240319
+- digest: sha256:713a4ba2e4a5ee9f2c965ee09ad5c70a52acae27964d96e7770e7879c66225c3
+  image: osism.harbor.regio.digital/kolla/release/nova-api:28.0.2.20240503
+- digest: sha256:550ba1353c802c19739e46eeea332fbc21cd79b62067d1f4338095bcd51e6c8d
+  image: osism.harbor.regio.digital/kolla/release/nova-serialproxy:28.0.2.20240503
+- digest: sha256:f0a424a970b36a91dd0254be6f9db9f4a64c966713b505aa956482cdbd5cc8c1
+  image: osism.harbor.regio.digital/kolla/release/nova-compute-ironic:28.0.2.20240503
+- digest: sha256:23b3d1025acf57bef4738f2ae5a2dfd09fb855b0d35c611cc4328e92c79484b9
+  image: osism.harbor.regio.digital/kolla/release/nova-novncproxy:28.0.2.20240503
+- digest: sha256:c7bf3489de023a761ef1b182fddb595922100751ac4428713fb582bc3bbb8b52
+  image: osism.harbor.regio.digital/kolla/release/nova-ssh:28.0.2.20240503
+- digest: sha256:0a41aa8b6535dcc38d09caca6cd1d723f2f29d34e19359f8896e24648333c8e0
+  image: osism.harbor.regio.digital/kolla/release/nova-scheduler:28.0.2.20240503
+- digest: sha256:a25bec2aadf7e3af3d39eeaad38c2753526a1736769e56d8f46187f19384775b
+  image: osism.harbor.regio.digital/kolla/release/nova-conductor:28.0.2.20240503
+- digest: sha256:61a472f1bf12d5948858cdabaf41da772487639d439e07fb9a5d00d1287cab09
+  image: osism.harbor.regio.digital/kolla/release/nova-spicehtml5proxy:28.0.2.20240503
+- digest: sha256:fb74eb6dfcd3758207f13926ccdf21f607289fdd0b3188f8bc973ad14bf3f9c2
+  image: osism.harbor.regio.digital/kolla/release/nova-compute:28.0.2.20240503
 - digest: sha256:ccb65956d8861b154914ce9160731add6b8077fde63e2dfe0bea08b8db5b8cfb
   image: osism.harbor.regio.digital/kolla/release/cinder-api:23.1.1.20240319
 - digest: sha256:a4fea54fb837b9e3df7e2423de1769f02eab36e75dea601cebaf7bdda7759ba2
@@ -40,16 +40,16 @@ images:
   image: osism.harbor.regio.digital/kolla/release/cinder-volume:23.1.1.20240319
 - digest: sha256:40d18aca3ab55ac8d2b03de83519ae6d006818c2ac95da62b4fa946511d0f08a
   image: osism.harbor.regio.digital/kolla/release/placement-api:10.0.0.20240319
-- digest: sha256:b06bd066b2deeed779e99fbfe07a189c1e902cf241d8df198ac69e24e1fe129b
-  image: osism.harbor.regio.digital/kolla/release/octavia-worker:13.0.1.20240327
-- digest: sha256:bd620e860525a088b3603ec235456cb9cc256cb4d6efec74211af7ce273db598
-  image: osism.harbor.regio.digital/kolla/release/octavia-api:13.0.1.20240327
-- digest: sha256:5c9b9749b80679b9d0ce26f6d0eb587d45a5b142d692199bfb113a51f95bc5ac
-  image: osism.harbor.regio.digital/kolla/release/octavia-driver-agent:13.0.1.20240327
-- digest: sha256:fab09468d6dc77ddeb998b4b0f53c185a33c95cbae30c51b3431bb0608eeade7
-  image: osism.harbor.regio.digital/kolla/release/octavia-housekeeping:13.0.1.20240327
-- digest: sha256:378aff9801fef3eedef22cc95af7c61457b96f2bf982fb15591b28d27951e9d1
-  image: osism.harbor.regio.digital/kolla/release/octavia-health-manager:13.0.1.20240327
+- digest: sha256:dea1b09db037e799d2d2e2e2d8feb7e6a00533df9084a03c4abf6ebfec4e2828
+  image: osism.harbor.regio.digital/kolla/release/octavia-driver-agent:13.0.1.20240503
+- digest: sha256:18e64f76601f6fd3a1b1d1e0d5a46d3a5401cdc4081c9961eca8dcf19652a32d
+  image: osism.harbor.regio.digital/kolla/release/octavia-housekeeping:13.0.1.20240503
+- digest: sha256:77e631044e2947322f30ffd5e3580713d415a873b6d3a8fe3af7c03ecdb8344f
+  image: osism.harbor.regio.digital/kolla/release/octavia-api:13.0.1.20240503
+- digest: sha256:9f82f81bcd75412597c01c61edb44b031e8996a07373708c386ae085c1b27bc8
+  image: osism.harbor.regio.digital/kolla/release/octavia-worker:13.0.1.20240503
+- digest: sha256:8ca775c611a8388363857203760b8d8881fc907ce17f63e71f744e1fc16c2e6e
+  image: osism.harbor.regio.digital/kolla/release/octavia-health-manager:13.0.1.20240503
 - digest: sha256:dffe6b082d887a68153e2affb3361092f349555b98fe7d181b474667b9dd2d72
   image: osism.harbor.regio.digital/kolla/release/ironic-api:23.0.1.20240319
 - digest: sha256:49d7a3bf57f3854967cacada1a989e8a927c1b830bba55fddfd0f587f5a2ba53
@@ -196,8 +196,8 @@ images:
   image: osism.harbor.regio.digital/kolla/release/horizon:23.3.1.20240319
 - digest: sha256:95f528d1633d1b8dd962b0ab354a6fd0114c3a90fe6b84540ce52ca51f79f032
   image: osism.harbor.regio.digital/kolla/release/ironic-inspector:11.7.1.20240319
-- digest: sha256:fdeecff78f077e77829249b1ac7816930cba1c760c67420cbedc6468669b54a7
-  image: osism.harbor.regio.digital/kolla/release/nova-libvirt:8.0.0.20240319
+- digest: sha256:ee3574bd2996d396fcdb791cdd34527a937404570d4bef7c560d1b7785e83cf4
+  image: osism.harbor.regio.digital/kolla/release/nova-libvirt:8.0.0.20240503
 - digest: sha256:4686b9ad1caa92c80bf5f1d9027523fae326768c3f4d29840cb56725c9d5df5f
   image: osism.harbor.regio.digital/kolla/release/opensearch:2.12.0.20240319
 - digest: sha256:7e6b21f3caac3c3c96482f94ef29840cb4e65587b7cb240171a6a534179b9e93
@@ -259,9 +259,9 @@ versions:
   memcached: 1.6.14.20240319
   multipathd: 0.8.8.20240319
   neutron: 23.1.1.20240319
-  nova: 28.0.2.20240319
-  nova_libvirt: 8.0.0.20240319
-  octavia: 13.0.1.20240327
+  nova: 28.0.2.20240503
+  nova_libvirt: 8.0.0.20240503
+  octavia: 13.0.1.20240503
   opensearch: 2.12.0.20240319
   opensearch_dashboards: 2.12.0.20240319
   openvswitch: 3.3.0.20240319
