@@ -27,15 +27,23 @@ with open(os.path.join(VERSION, f"{LIST}.yml")) as fp:
 images = data.get("images", {})
 for image in images:
     logger.info(f"Processing {image['image']}")
+    command = f"skopeo inspect --retry-times 3 docker://{image['image']}"
+
+    logger.info(f"Running {command}")
     p = subprocess.Popen(
-        f"skopeo inspect docker://{image['image']}",
+        command,
         shell=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
     )
     p.wait()
     stdout = io.TextIOWrapper(p.stdout, encoding="utf-8")
-    result = json.loads(stdout.read())
+
+    try:
+        result = json.loads(stdout.read())
+    except json.decoder.JSONDecodeError:
+        logger.error(f"JSON decoding for image {image['image']} failed")
+
     image["digest"] = result["Digest"]
 
 with open(os.path.join(VERSION, f"{LIST}.yml"), "w+") as fp:
