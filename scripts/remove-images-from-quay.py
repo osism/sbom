@@ -68,6 +68,13 @@ def main(
         bool,
         typer.Option("--dry-run", "-d", help="Dry run. Do nothing."),
     ] = False,
+    tag: Annotated[
+        str,
+        typer.Option(
+            "--tag",
+            help="Overwrite the image tag that should be removed for an image",
+        ),
+    ] = None,
     token: Annotated[
         str,
         typer.Option(
@@ -102,6 +109,10 @@ def main(
 
     for imageObject in imageList:
         imageName, imageVersion = getImageMeta(imageObject, version, force)
+
+        if tag:
+            imageVersion = tag
+
         imageRemoveURL = f"{QUAY_PREFIX}/{imageName}:{imageVersion}"
 
         if not getImageDecision(imageRemoveURL, no_confirm):
