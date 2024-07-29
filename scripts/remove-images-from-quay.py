@@ -137,7 +137,7 @@ def main(
         logger.info(f"Removing '{imageRemoveURL}'...")
 
         if not dry_run:
-            removeImage(token, imageName, imageVersion)
+            removeImage(token, imageName, version)
 
     logger.info("Done removing other images")
 
