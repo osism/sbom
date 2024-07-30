@@ -72,7 +72,7 @@ def main(
         str,
         typer.Option(
             "--tag",
-            help="Overwrite the image tag that should be removed for an image",
+            help="Overwrite or set the image tag that should be removed for an image",
         ),
     ] = None,
     token: Annotated[
@@ -101,7 +101,7 @@ def main(
     if dry_run:
         logger.info("Dry run. Nothing will be removed.")
 
-    imageList = getImageList(version)
+    imageList = getImageList(version, tag, token)
 
     logger.info(f"Found {len(imageList)} image(s) for version '{version}'")
 
@@ -125,21 +125,22 @@ def main(
 
     logger.info("Done removing kolla images")
 
-    logger.info("Removing other images...")
+    if version != "all":
+        logger.info("Removing other images...")
 
-    for imageName in ADDITIONAL_REPOS:
-        imageRemoveURL = f"{QUAY_PREFIX}/{imageName}:{version}"
+        for imageName in ADDITIONAL_REPOS:
+            imageRemoveURL = f"{QUAY_PREFIX}/{imageName}:{version}"
 
-        if not getImageDecision(imageRemoveURL, no_confirm):
-            logger.info(f"Skipping removal of '{imageRemoveURL}'")
-            continue
+            if not getImageDecision(imageRemoveURL, no_confirm):
+                logger.info(f"Skipping removal of '{imageRemoveURL}'")
+                continue
 
-        logger.info(f"Removing '{imageRemoveURL}'...")
+            logger.info(f"Removing '{imageRemoveURL}'...")
 
-        if not dry_run:
-            removeImage(token, imageName, version)
+            if not dry_run:
+                removeImage(token, imageName, version)
 
-    logger.info("Done removing other images")
+        logger.info("Done removing other images")
 
 
 def processToken(token: str) -> str:
@@ -164,6 +165,10 @@ def precheck(version: str, force: bool) -> None:
     """
     Pre check the version string for known good patterns
     """
+
+    if version == "all":
+        return
+
     versionComponents = version.split(".")
 
     if len(versionComponents) != 3:
@@ -181,29 +186,66 @@ def precheck(version: str, force: bool) -> None:
         )
 
 
-def getImageList(version: str) -> List[Dict[str, Any]]:
+def getImageListFromQuay(
+    tag: str, token: str, next_page: str = None
+) -> List[Dict[str, Any]]:
+    apiURL = "https://quay.io/api/v1/repository"
+    headers = {"content-type": "application/json", "Authorization": f"Bearer {token}"}
+
+    if next_page:
+        response = requests.get(
+            f"{apiURL}?namespace=osism&next_page={next_page}", headers=headers
+        )
+    else:
+        response = requests.get(f"{apiURL}?namespace=osism", headers=headers)
+
+    if response.status_code not in {200}:
+        error_and_fail(
+            f"Get image list failed with: {response.status_code} '{response.text}'"
+        )
+    else:
+        if "next_page" in response.json():
+            next_page = response.json()["next_page"]
+            result = getImageListFromQuay(tag, token, next_page)
+        else:
+            result = []
+
+        for repository in response.json()["repositories"]:
+            result.append({"image": f"quay.io/osism/{repository['name']}:{tag}"})
+
+    return result
+
+
+def getImageList(version: str, tag: str, token: str) -> List[Dict[str, Any]]:
     """
     Returns the yaml file containing image definitions for the given version
     """
-    requestURL = (
-        f"https://raw.githubusercontent.com/osism/sbom/main/{version}/openstack.yml"
-    )
-    response = requests.get(requestURL)
 
-    if response.status_code != 200:
-        error_and_fail(
-            f"Request {requestURL} returned with status code {response.status_code}"
+    if version == "all":
+        result = getImageListFromQuay(tag, token)
+
+    else:
+        requestURL = (
+            f"https://raw.githubusercontent.com/osism/sbom/main/{version}/openstack.yml"
         )
+        response = requests.get(requestURL)
 
-    y = yaml.load(response.text, Loader=yaml.SafeLoader)
+        if response.status_code != 200:
+            error_and_fail(
+                f"Request {requestURL} returned with status code {response.status_code}"
+            )
 
-    if not isinstance(y, dict):
-        error_and_fail("Response yaml is not a dictionary")
+        y = yaml.load(response.text, Loader=yaml.SafeLoader)
 
-    if "images" not in y:
-        error_and_fail("Response yaml is missing the 'images' list")
+        if not isinstance(y, dict):
+            error_and_fail("Response yaml is not a dictionary")
 
-    return y["images"]
+        if "images" not in y:
+            error_and_fail("Response yaml is missing the 'images' list")
+
+        result = y["images"]
+
+    return result
 
 
 def getImageMeta(imageObject: Dict[str, Any], version: str, force: bool) -> str:
@@ -214,13 +256,15 @@ def getImageMeta(imageObject: Dict[str, Any], version: str, force: bool) -> str:
         error_and_fail("Image object has no attribute 'image'")
 
     image = imageObject["image"]
-    checkPrefix = IMAGE_PREFIX[version[:-1]]
 
-    if not image.startswith(checkPrefix):
-        warning_or_error(
-            f"Image '{image}' does not start with known image prefix '{checkPrefix}'",
-            force,
-        )
+    if version != "all":
+        checkPrefix = IMAGE_PREFIX[version[:-1]]
+
+        if not image.startswith(checkPrefix):
+            warning_or_error(
+                f"Image '{image}' does not start with known image prefix '{checkPrefix}'",
+                force,
+            )
 
     imageMeta = image.split("/")[-1]
 
