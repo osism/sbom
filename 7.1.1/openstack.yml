@@ -25,7 +25,7 @@ images:
 - image: osism.harbor.regio.digital/kolla/release/designate-sink:17.0.1.20240319
 - image: osism.harbor.regio.digital/kolla/release/designate-worker:17.0.1.20240319
 - image: osism.harbor.regio.digital/kolla/release/dnsmasq:2.90.20240319
-- image: osism.harbor.regio.digital/kolla/release/fluentd:5.0.2.20240319
+- image: osism.harbor.regio.digital/kolla/release/fluentd:5.0.4.20240812
 - image: osism.harbor.regio.digital/kolla/release/glance-api:27.0.1.20240710
 - image: osism.harbor.regio.digital/kolla/release/gnocchi-api:4.6.2.20240319
 - image: osism.harbor.regio.digital/kolla/release/gnocchi-metricd:4.6.2.20240319
@@ -45,9 +45,9 @@ images:
 - image: osism.harbor.regio.digital/kolla/release/ironic-pxe:23.0.1.20240319
 - image: osism.harbor.regio.digital/kolla/release/iscsid:2.1.5.20240319
 - image: osism.harbor.regio.digital/kolla/release/keepalived:2.2.4.20240319
-- image: osism.harbor.regio.digital/kolla/release/keystone-fernet:24.0.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/keystone-ssh:24.0.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/keystone:24.0.1.20240723
+- image: osism.harbor.regio.digital/kolla/release/keystone-fernet:24.0.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/keystone-ssh:24.0.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/keystone:24.0.1.20240812
 - image: osism.harbor.regio.digital/kolla/release/kolla-toolbox:17.3.0.20240319
 - image: osism.harbor.regio.digital/kolla/release/magnum-api:17.0.3.20240710
 - image: osism.harbor.regio.digital/kolla/release/magnum-conductor:17.0.3.20240710
@@ -71,16 +71,16 @@ images:
 - image: osism.harbor.regio.digital/kolla/release/neutron-ovn-agent:23.1.1.20240319
 - image: osism.harbor.regio.digital/kolla/release/neutron-server:23.1.1.20240319
 - image: osism.harbor.regio.digital/kolla/release/neutron-sriov-agent:23.1.1.20240319
-- image: osism.harbor.regio.digital/kolla/release/nova-api:28.2.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/nova-compute-ironic:28.2.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/nova-compute:28.2.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/nova-conductor:28.2.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/nova-libvirt:8.0.0.20240723
-- image: osism.harbor.regio.digital/kolla/release/nova-novncproxy:28.2.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/nova-scheduler:28.2.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/nova-serialproxy:28.2.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/nova-spicehtml5proxy:28.2.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/nova-ssh:28.2.1.20240723
+- image: osism.harbor.regio.digital/kolla/release/nova-api:28.2.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/nova-compute-ironic:28.2.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/nova-compute:28.2.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/nova-conductor:28.2.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/nova-libvirt:8.0.0.20240812
+- image: osism.harbor.regio.digital/kolla/release/nova-novncproxy:28.2.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/nova-scheduler:28.2.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/nova-serialproxy:28.2.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/nova-spicehtml5proxy:28.2.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/nova-ssh:28.2.1.20240812
 - image: osism.harbor.regio.digital/kolla/release/octavia-api:13.0.1.20240710
 - image: osism.harbor.regio.digital/kolla/release/octavia-driver-agent:13.0.1.20240710
 - image: osism.harbor.regio.digital/kolla/release/octavia-health-manager:13.0.1.20240710
@@ -88,12 +88,12 @@ images:
 - image: osism.harbor.regio.digital/kolla/release/octavia-worker:13.0.1.20240710
 - image: osism.harbor.regio.digital/kolla/release/opensearch-dashboards:2.12.0.20240319
 - image: osism.harbor.regio.digital/kolla/release/opensearch:2.12.0.20240319
-- image: osism.harbor.regio.digital/kolla/release/openvswitch-db-server:3.3.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/openvswitch-vswitchd:3.3.1.20240723
-- image: osism.harbor.regio.digital/kolla/release/ovn-controller:24.3.2.20240723
-- image: osism.harbor.regio.digital/kolla/release/ovn-nb-db-server:24.3.2.20240723
-- image: osism.harbor.regio.digital/kolla/release/ovn-northd:24.3.2.20240723
-- image: osism.harbor.regio.digital/kolla/release/ovn-sb-db-server:24.3.2.20240723
+- image: osism.harbor.regio.digital/kolla/release/openvswitch-db-server:3.3.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/openvswitch-vswitchd:3.3.1.20240812
+- image: osism.harbor.regio.digital/kolla/release/ovn-controller:24.3.2.20240812
+- image: osism.harbor.regio.digital/kolla/release/ovn-nb-db-server:24.3.2.20240812
+- image: osism.harbor.regio.digital/kolla/release/ovn-northd:24.3.2.20240812
+- image: osism.harbor.regio.digital/kolla/release/ovn-sb-db-server:24.3.2.20240812
 - image: osism.harbor.regio.digital/kolla/release/placement-api:10.0.0.20240319
 - image: osism.harbor.regio.digital/kolla/release/prometheus-alertmanager:0.26.0.20240319
 - image: osism.harbor.regio.digital/kolla/release/prometheus-blackbox-exporter:0.24.0.20240319
@@ -123,7 +123,7 @@ versions:
   cron: 3.0.20240319
   designate: 17.0.1.20240319
   dnsmasq: 2.90.20240319
-  fluentd: 5.0.2.20240319
+  fluentd: 5.0.4.20240812
   glance: 27.0.1.20240710
   gnocchi: 4.6.2.20240319
   grafana: 10.4.0.20240319
@@ -135,7 +135,7 @@ versions:
   ironic_inspector: 11.7.1.20240319
   iscsid: 2.1.5.20240319
   keepalived: 2.2.4.20240319
-  keystone: 24.0.1.20240723
+  keystone: 24.0.1.20240812
   kolla-toolbox: 17.3.0.20240319
   kolla_toolbox: 17.3.0.20240319
   magnum: 17.0.3.20240710
@@ -144,13 +144,13 @@ versions:
   memcached: 1.6.14.20240319
   multipathd: 0.8.8.20240319
   neutron: 23.1.1.20240319
-  nova: 28.2.1.20240723
-  nova_libvirt: 8.0.0.20240723
+  nova: 28.2.1.20240812
+  nova_libvirt: 8.0.0.20240812
   octavia: 13.0.1.20240710
   opensearch: 2.12.0.20240319
   opensearch_dashboards: 2.12.0.20240319
-  openvswitch: 3.3.1.20240723
-  ovn: 24.3.2.20240723
+  openvswitch: 3.3.1.20240812
+  ovn: 24.3.2.20240812
   placement: 10.0.0.20240319
   prometheus: 2.48.0.20240319
   prometheus_alertmanager: 0.26.0.20240319
